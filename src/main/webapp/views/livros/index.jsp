@@ -82,12 +82,6 @@
 														<form action="livro-update">
 												            <h2 class="text-center">Atualizar</h2>
 												            <input type="hidden" id="id" name="id" class="form-control" value="${l.id}" />
-											<!-- 	            <div class="form-group mb-3"> -->
-											<!-- 	                <label for="nome" class="form-label"> -->
-											<!-- 	                    id -->
-											<!-- 	                </label> -->
-											<%-- 	                <input type="text" id="id" name="id" class="form-control" value="${livro.id}" readonly/> --%>
-											<!-- 	            </div> -->
 												            <div class="form-group mb-3">
 												                <label for="nome" class="form-label">
 												                    Nome
@@ -153,12 +147,6 @@
 						<form action="livro-create">
 				            <h2 class="text-center">Atualizar</h2>
 				            <input type="hidden" id="id" name="id" class="form-control" value="" />
-			<!-- 	            <div class="form-group mb-3"> -->
-			<!-- 	                <label for="nome" class="form-label"> -->
-			<!-- 	                    id -->
-			<!-- 	                </label> -->
-			<%-- 	                <input type="text" id="id" name="id" class="form-control" value="${livro.id}" readonly/> --%>
-			<!-- 	            </div> -->
 				            <div class="form-group mb-3">
 				                <label for="nome" class="form-label">
 				                    Nome
