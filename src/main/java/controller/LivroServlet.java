@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import dao.LivroDAO;
 import modelos.Livros;
 
-@WebServlet(urlPatterns = { "/livro", "/livro-create", "/livro-edit", "/livro-update", "/livro-delete" })
+@WebServlet(urlPatterns = { "/livro", "/livro-create", "/livro-update", "/livro-delete" })
 public class LivroServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	LivroDAO ldao = new LivroDAO();
@@ -34,9 +34,6 @@ public class LivroServlet extends HttpServlet {
 			break;
 		case "/livro-create":
 			create(request, response);
-			break;
-		case "/livro-edit":
-			edit(request, response);
 			break;
 		case "/livro-update":
 			update(request, response);
@@ -70,17 +67,6 @@ public class LivroServlet extends HttpServlet {
 
 		ldao.create(livro);
 		response.sendRedirect("livro");
-	}
-
-	protected void edit(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		int id = Integer.parseInt(request.getParameter("id"));
-		
-		livro = ldao.readById(id);
-		
-		request.setAttribute("livro", livro);
-
-		RequestDispatcher rd = request.getRequestDispatcher("./views/livros/update.jsp");
-		rd.forward(request, response);
 	}
 
 	protected void update(HttpServletRequest request, HttpServletResponse response)

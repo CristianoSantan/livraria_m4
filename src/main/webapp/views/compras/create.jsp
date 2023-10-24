@@ -26,7 +26,7 @@
 		</jsp:include>
 
 		<div class="container py-3">
-			<form action="../../compra-create">
+			<form action="compra-create">
 				<h2 class="text-center">Criar</h2>
 				<div class="form-group mb-3">
 					<label for="data" class="form-label"> Data </label> <input
@@ -34,8 +34,8 @@
 				</div>
 
 				<div class="form-group mb-3">
-					<label for="livro" class="form-label"> Livro </label> <select
-						id="livro" name="livro" class="form-control">
+					<label for="livro" class="form-label"> Livro </label> 
+					<select id="livro" name="livro" class="form-control">
 						<option value="DEFAULT">Escolha um Livro</option>
 						<jstl:forEach items="${listaLivros}" var="l">
 							<option value="${l.id}">${l.nome}</option>
@@ -43,8 +43,8 @@
 					</select>
 				</div>
 				<div class="form-group mb-3">
-					<label for="usuario" class="form-label"> Usuario </label> <select
-						id="usuario" name="usuario" class="form-control">
+					<label for="usuario" class="form-label"> Usuario </label> 
+					<select id="usuario" name="usuario" class="form-control">
 						<option value="DEFAULT">Escolha um Usuario</option>
 						<jstl:forEach items="${listaUsuarios}" var="u">
 							<option value="${u.id}">${u.nome}</option>
@@ -53,7 +53,7 @@
 				</div>
 				
 				<button type="submit" class="btn btn-primary">Enviar</button>
-				<a href="./livro" class="btn btn-danger"
+				<a href="./compra" class="btn btn-danger"
 					style="margin-left: 10px"> Cancelar </a>
 			</form>
 		</div>

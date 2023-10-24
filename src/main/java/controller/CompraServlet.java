@@ -81,7 +81,12 @@ public class CompraServlet extends HttpServlet {
 	}
 
 	protected void create(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		Usuarios usuario = udao.readById(Integer.parseInt(request.getParameter("usuario")));
+		Livros livro = ldao.readById(Integer.parseInt(request.getParameter("livro")));
 		
+		String data = request.getParameter("data");
+		
+		compra = new Compras(data, usuario, livro);
 		
 		cdao.create(compra);
 		response.sendRedirect("compra");
@@ -93,6 +98,12 @@ public class CompraServlet extends HttpServlet {
 		compra = cdao.readById(id);
 		
 		request.setAttribute("compra", compra);
+		
+		List<Livros> listaLivros = ldao.read();
+		request.setAttribute("listaLivros", listaLivros);
+		
+		List<Usuarios> listaUsuarios = udao.read();
+		request.setAttribute("listaUsuarios", listaUsuarios);
 
 		RequestDispatcher rd = request.getRequestDispatcher("./views/compras/update.jsp");
 		rd.forward(request, response);
@@ -101,6 +112,9 @@ public class CompraServlet extends HttpServlet {
 	protected void update(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		compra.setId(Integer.parseInt(request.getParameter("id")));
+		compra.setUsuario(udao.readById(Integer.parseInt(request.getParameter("usuario"))));
+		compra.setLivro(ldao.readById(Integer.parseInt(request.getParameter("livro"))));
+		compra.setData_compra(request.getParameter("data"));
 
 		cdao.update(compra);
 		response.sendRedirect("compra");

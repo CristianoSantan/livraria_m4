@@ -59,7 +59,7 @@
 											<i class="ri-file-edit-line"></i>
 										</a> 
 										<a href="compra-delete?id=${c.id}" class="mx-1" title="Cancelar"
-											onclick="return confirm('Deseja excluir o autor.')">
+											onclick="return confirm('Deseja excluir o compra.')">
 											<i class="ri-delete-bin-2-line"></i>
 										</a>
 									</div>
